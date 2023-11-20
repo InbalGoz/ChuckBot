@@ -54,6 +54,14 @@ const fetchJokes = async () => {
   }
 };
 
+(async () => {
+  try {
+    jokes = await fetchJokes();
+  } catch (error) {
+    console.error("Error initializing jokes:", error.message);
+  }
+})();
+
 const translateText = async (joke) => {
   try {
     // Translate text using Google Cloud Translation API
@@ -71,14 +79,6 @@ const translateText = async (joke) => {
     return "Translation error";
   }
 };
-
-(async () => {
-  try {
-    jokes = await fetchJokes();
-  } catch (error) {
-    console.error("Error initializing jokes:", error.message);
-  }
-})();
 
 bot.onText(/\/start/, async (msg) => {
   const chatId = msg.chat.id;
@@ -114,17 +114,16 @@ bot.onText(/^\d+$/, async (msg) => {
       const joke = await translateText(chuckNorrisjoke);
 
       await bot.sendMessage(chatId, `${jokeNumber}. ${joke}`);
+      await bot.sendMessage(
+        chatId,
+        "You can start all over again by clicking on '/start', or you can choose another joke by enter a number between 1 and 101."
+      );
     } else {
-      bot.sendMessage(
+      await bot.sendMessage(
         chatId,
         "Invalid number. Please enter a number between 1 and 101."
       );
     }
-
-    await bot.sendMessage(
-      chatId,
-      "You can start all over again by clicking on '/start', or you can choose another joke by enter a number between 1 and 101."
-    );
   } else {
     bot.sendMessage(
       chatId,

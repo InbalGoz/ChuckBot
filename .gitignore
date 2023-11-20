@@ -1,3 +1,5 @@
 .env
 node_modules/
 unique-voyage-405517-1b48d1f47f1e.json
+.vscode
+.deployment
