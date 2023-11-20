@@ -19,13 +19,17 @@ $ npm install<br/>
 
 - Create a .env file in the root directory and add your Telegram Bot Token:<br/>
   TELEGRAM_TOKEN = your_telegram_bot_token_here<br/>
+
+- How to use Google cloud Api for translation service:<br/>
+  1. Install the @google-cloud/translate Node.js client library - npm install @google-cloud/translate.<br/>
+  2. Replace 'path/to/your/service-account-key.json' with the actual path to your service account key file.
+  3. Also, set up the GOOGLE_CLOUD_PROJECT_ID environment variable with your Google Cloud Project ID.
   
 - Start the bot<br/>
   $ npm start<br/>
 Open your Telegram app and search for the bot by its username @chuckbot1_bot.<br/>
 Start a chat with the bot and follow the instructions.
 
-For translation service I used Google cloud Api.
 
 ## How to Connect to the Bot
 1. Click on the [ChuckBot](https://t.me/chuckbot1_bot?start=Hello) link to start.
