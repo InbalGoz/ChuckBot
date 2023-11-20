@@ -25,6 +25,8 @@ $ npm install<br/>
 Open your Telegram app and search for the bot by its username @chuckbot1_bot.<br/>
 Start a chat with the bot and follow the instructions.
 
+For translation service I used Google cloud Api.
+
 ## How to Connect to the Bot
 1. Click on the [ChuckBot](https://t.me/chuckbot1_bot?start=Hello) link to start.
 2. Start a chat with the bot by clicking the "Start" button and follow the instructions.
